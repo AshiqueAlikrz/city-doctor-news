@@ -80,8 +80,8 @@
 
 1️⃣ Clone the Repository
 
-    git clone https://github.com/your-username/news-app.git
-
+    https://github.com/AshiqueAlikrz/city-doctor-news.git
+    
 2️⃣ Install Dependencies
 
     npm i
