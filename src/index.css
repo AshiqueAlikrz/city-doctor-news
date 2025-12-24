@@ -5,7 +5,6 @@
 
 @layer base {
   :root {
-    /* Editorial News Theme - Light */
     --background: 40 33% 98%;
     --foreground: 222 47% 11%;
 
@@ -24,8 +23,8 @@
     --muted: 40 15% 92%;
     --muted-foreground: 222 20% 45%;
 
-    --accent: 15 80% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 137 52% 58%;
+    --accent-foreground: 137 52% 58%;;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -44,7 +43,7 @@
     --divider: 40 15% 85%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(222 47% 20%), hsl(222 47% 35%));
+    --gradient-primary: linear-gradient(135deg, hsl(137 52% 58%), hsl(137, 52%, 64%));
     --gradient-accent: linear-gradient(135deg, hsl(15 80% 55%), hsl(25 85% 60%));
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 25% 98%));
 
@@ -81,7 +80,7 @@
     --muted: 222 35% 16%;
     --muted-foreground: 222 15% 60%;
 
-    --accent: 15 80% 55%;
+    --accent: 137 52% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;

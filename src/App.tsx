@@ -7,7 +7,6 @@ import Index from './pages/Index';
 import PostDetail from './pages/PostDetail';
 import NotFound from './pages/NotFound';
 
-// Theme & Language Provider
 const AppContent = () => {
   const theme = useAppSelector((state) => state.theme.mode);
   const language = useAppSelector((state) => state.language.current);
@@ -15,7 +14,6 @@ const AppContent = () => {
   useEffect(() => {
     const root = document.documentElement;
     
-    // Apply theme
     if (theme === 'dark') {
       root.classList.add('dark');
     } else {
@@ -26,7 +24,6 @@ const AppContent = () => {
   useEffect(() => {
     const root = document.documentElement;
     
-    // Apply RTL direction
     if (language === 'ar') {
       root.setAttribute('dir', 'rtl');
       root.setAttribute('lang', 'ar');

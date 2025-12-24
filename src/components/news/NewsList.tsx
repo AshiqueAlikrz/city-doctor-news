@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { RefreshCw, AlertCircle } from "lucide-react";
-import { useGetNewsQuery } from "@/store/api/newsApi";
+import { useGetNewsQuery } from "@/store/action/newsAction";
 import { useTranslation } from "@/hooks/useTranslation";
 import NewsCard from "./NewsCard";
 import NewsCardSkeleton from "./NewsCardSkeleton";

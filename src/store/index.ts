@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/query';
-import { newsApi } from './api/newsApi';
-import themeReducer from './slices/themeSlice';
-import languageReducer from './slices/languageSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { newsApi } from "./action/newsAction";
+import themeReducer from "./slices/themeSlice";
+import languageReducer from "./slices/languageSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,8 +10,7 @@ export const store = configureStore({
     theme: themeReducer,
     language: languageReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(newsApi.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(newsApi.middleware),
 });
 
 setupListeners(store.dispatch);

@@ -4,6 +4,9 @@ import HeroSection from "@/components/news/HeroSection";
 import NewsList from "@/components/news/NewsList";
 import { useTranslation } from "@/hooks/useTranslation";
 import HeadingNewsSection from "@/components/news/HeadingNewsSection";
+import Footer from "@/components/layout/footer";
+import Sponsors from "@/components/sponser";
+import MainHeading from "@/components/news/MainHeading";
 
 const Index = () => {
   const { t, isRTL } = useTranslation();
@@ -17,6 +20,7 @@ const Index = () => {
 
         <section className="pb-16 md:pb-24">
           <div className="container">
+            <MainHeading />
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className={`flex items-center gap-4 mb-8 mt-10 ${isRTL ? "flex-row-reverse" : ""}`}>
               <h2 className="headline-lg">{t("trendingNews")}</h2>
               <div className="flex-1 h-px bg-divider" />
@@ -29,13 +33,13 @@ const Index = () => {
             <NewsList />
           </div>
         </section>
+        <section>
+          <Sponsors />
+        </section>
       </main>
-
-      <footer className="border-t border-border py-8">
-        <div className="container">
-          <p className="text-center text-sm text-muted-foreground">© 2024 News. All rights reserved.</p>
-        </div>
-      </footer>
+      <section>
+        <Footer />
+      </section>
     </div>
   );
 };

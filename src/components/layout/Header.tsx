@@ -6,6 +6,7 @@ import { toggleLanguage } from "@/store/slices/languageSlice";
 import { useTranslation } from "@/hooks/useTranslation";
 import { Link } from "react-router-dom";
 import NewsSection from "./Sections";
+import { compareAsc, format } from "date-fns";
 
 const Header = () => {
   const dispatch = useAppDispatch();
@@ -22,12 +23,12 @@ const Header = () => {
       style={{ background: "hsl(var(--background) / 0.9)" }}
     >
       <div className="container mx-auto">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex  items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex items-center gap-3">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex  items-center gap-3">
               <div
-                className="w-20 h-20"
+                className="sm:w-20 sm:h-20 h-14 w-14"
                 style={{
                   backgroundImage: "url(/favicon.ico)",
                   backgroundSize: "contain",
@@ -35,8 +36,10 @@ const Header = () => {
                   backgroundRepeat: "no-repeat",
                 }}
               ></div>
-
-              <span className=" text-2xl font-bold text-headline hidden sm:block">{t("companyName") + " " + t("news")}</span>
+              <div className="flex flex-col">
+                <span className=" text-sm sm:text-2xl font-bold text-headline ">{t("companyName") + " " + t("news")}</span>
+                <span className=" text-[7px] xs:text-[10px] sm:text-sm font-medium text-headline  ">{format(new Date(), "dd/MM/yyyy - EEEE")}</span>
+              </div>
             </motion.div>
           </Link>
 
@@ -54,7 +57,6 @@ const Header = () => {
               </motion.span>
             </motion.button>
 
-            {/* Theme Toggle */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

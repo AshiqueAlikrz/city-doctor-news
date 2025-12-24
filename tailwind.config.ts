@@ -9,6 +9,7 @@ export default {
       center: true,
       padding: "1.5rem",
       screens: {
+        xs: "375px",
         sm: "640px",
         md: "768px",
         lg: "1024px",
@@ -99,6 +100,13 @@ export default {
         "fade-in": "fade-in 0.5s ease-out forwards",
         "slide-up": "slide-up 0.5s ease-out forwards",
         "scale-in": "scale-in 0.3s ease-out forwards",
+      },
+      screens: {
+        xs: "375px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1200px",
       },
     },
   },

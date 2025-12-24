@@ -1,5 +1,5 @@
 import React from "react";
-import { useGetNewsQuery } from "@/store/api/newsApi";
+import { useGetNewsQuery } from "@/store/action/newsAction";
 
 const HeadingNewsSection: React.FC = () => {
   const { data: news, isLoading, isError, refetch } = useGetNewsQuery();
@@ -28,7 +28,7 @@ const HeadingNewsSection: React.FC = () => {
   const newsItem = news[1];
 
   return (
-    <div className=" bg-white shadow-md rounded-md overflow-hidden flex flex-col md:flex-row my-4">
+    <div className=" bg-card group shadow-md overflow-hidden flex flex-col md:flex-row my-4">
       <div className="md:w-1/3 w-full h-48 md:h-auto flex-shrink-0">
         <img src={trendingImage} alt={newsItem.title} className="object-cover w-full h-full" />
       </div>

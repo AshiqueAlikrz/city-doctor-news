@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export interface Post {
   userId: number;
@@ -32,14 +32,14 @@ export interface NewsItem extends Post {
 }
 
 export const newsApi = createApi({
-  reducerPath: 'newsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
+  reducerPath: "newsApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://jsonplaceholder.typicode.com/" }),
   endpoints: (builder) => ({
     getPosts: builder.query<Post[], void>({
-      query: () => 'posts',
+      query: () => "posts",
     }),
     getUsers: builder.query<User[], void>({
-      query: () => 'users',
+      query: () => "users",
     }),
     getPostById: builder.query<Post, number>({
       query: (id) => `posts/${id}`,
@@ -49,20 +49,20 @@ export const newsApi = createApi({
     }),
     getNews: builder.query<NewsItem[], void>({
       async queryFn(_arg, _queryApi, _extraOptions, fetchWithBQ) {
-        const postsResult = await fetchWithBQ('posts');
+        const postsResult = await fetchWithBQ("posts");
         if (postsResult.error) return { error: postsResult.error };
-        
-        const usersResult = await fetchWithBQ('users');
+
+        const usersResult = await fetchWithBQ("users");
         if (usersResult.error) return { error: usersResult.error };
-        
+
         const posts = postsResult.data as Post[];
         const users = usersResult.data as User[];
-        
+
         const newsItems: NewsItem[] = posts.map((post) => ({
           ...post,
           author: users.find((user) => user.id === post.userId) || users[0],
         }));
-        
+
         return { data: newsItems };
       },
     }),
@@ -70,25 +70,18 @@ export const newsApi = createApi({
       async queryFn(id, _queryApi, _extraOptions, fetchWithBQ) {
         const postResult = await fetchWithBQ(`posts/${id}`);
         if (postResult.error) return { error: postResult.error };
-        
+
         const post = postResult.data as Post;
-        
+
         const userResult = await fetchWithBQ(`users/${post.userId}`);
         if (userResult.error) return { error: userResult.error };
-        
+
         const user = userResult.data as User;
-        
+
         return { data: { ...post, author: user } };
       },
     }),
   }),
 });
 
-export const {
-  useGetPostsQuery,
-  useGetUsersQuery,
-  useGetPostByIdQuery,
-  useGetUserByIdQuery,
-  useGetNewsQuery,
-  useGetNewsByIdQuery,
-} = newsApi;
+export const { useGetPostsQuery, useGetUsersQuery, useGetPostByIdQuery, useGetUserByIdQuery, useGetNewsQuery, useGetNewsByIdQuery } = newsApi;
