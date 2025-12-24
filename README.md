@@ -1,73 +1,93 @@
-# Welcome to your City Doctor project
+- News App – React + RTK Query
 
-## Project info
+  The News Web Application built with React 18, TypeScript, Redux Toolkit, and RTK Query, featuring Dark/Light theme, English/Arabic language toggle, and a clean, responsive UI styled with Tailwind CSS.
 
-**URL**: https://City Doctor.dev/projects/REPLACE_WITH_PROJECT_ID
+1️⃣ Fetch News with RTK Query
 
-## How can I edit this code?
+   - Fetches posts from JSONPlaceholder API
 
-There are several ways of editing your application.
+   - Uses /posts to simulate news articles
 
-**Use City Doctor**
+   - Uses /users to simulate authors
 
-Simply visit the [City Doctor Project](https://City Doctor.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+   - Combines posts and users using RTK Query
 
-Changes made via City Doctor will be committed automatically to this repo.
+   - Automatic caching, loading, and error handling
 
-**Use your preferred IDE**
+2️⃣ Theme Support (Dark / Light)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in City Doctor.
+   - Toggle between Dark and Light mode
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+   - Theme state managed using Redux Toolkit slice
 
-Follow these steps:
+  - Used localStorage for persisting the theme, langauge
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+  - Smooth animated transitions
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+  - Styled using Tailwind CSS
 
-# Step 3: Install the necessary dependencies.
-npm i
+3️⃣ Language Toggle (English / Arabic)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+   - Toggle between EN / AR
 
-**Edit a file directly in GitHub**
+   - UI labels translated: News, Author, Read More
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+  - Language preference persisted
 
-**Use GitHub Codespaces**
+  - RTL support ready for Arabic
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+4️⃣ News List Page
 
-## What technologies are used for this project?
+  - Displays list of news articles: Title, Description, Author name, Thumbnail image
 
-This project is built with:
+  - Skeleton loader while fetching data
+  
+  - Fallback image when thumbnail fails
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+  - Responsive newspaper-style layout
 
-## How can I deploy this project?
+5️⃣ Post Details Page
 
-Simply open [City Doctor](https://City Doctor.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+  - Dedicated Post View Page
 
-## Can I connect a custom domain to my City Doctor project?
+  - Shows full article content
 
-Yes, you can!
+  - Displays author information
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+  - Navigation handled with React Router
 
-Read more here: [Setting up a custom domain](https://docs.City Doctor.dev/features/custom-domain#custom-domain)
+  - Animated transitions using Framer Motion
+
+🛠 Tech Stack
+
+ - React 18+
+
+ - TypeScript
+
+ - Redux Toolkit
+
+ - RTK Query
+
+ - React Router DOM
+
+ - Tailwind CSS
+
+ - Framer Motion
+
+ - Radix UI
+
+ - Lucide Icons
+
+1️⃣ Clone the Repository
+
+    git clone https://github.com/your-username/news-app.git
+
+2️⃣ Install Dependencies
+
+    npm i
+
+3️⃣ Run the app
+
+    npm run dev
+
+
